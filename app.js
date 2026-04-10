@@ -314,10 +314,10 @@ document.addEventListener('DOMContentLoaded', () => {
     renderTable();
     renderPreview();
   } else {
-    addMark(18, 'm', 94);
-    addMark(30, 'm', 78);
-    addMark(50, 'm', 57);
-    addMark(70, 'm', 38);
+    addMark(18, 'm', 15);
+    addMark(39, 'm', 47);
+    addMark(55, 'm', 82);
+    addMark(68, 'm', 113);
   }
 
   document.getElementById('add-mark-btn').addEventListener('click', () => addMark());
