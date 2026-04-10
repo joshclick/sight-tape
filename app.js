@@ -63,10 +63,8 @@ function getValidMarks() {
 const YD_TO_M = 0.9144;
 
 const STANDARD_DISTANCES = [
-  { d: 18 * YD_TO_M, label: '18yd' },
   { d: 18,           label: '18m'  },
   { d: 20,           label: '20m'  },
-  { d: 25 * YD_TO_M, label: '25yd' },
   { d: 25,           label: '25m'  },
   { d: 30,           label: '30m'  },
   { d: 40,           label: '40m'  },
