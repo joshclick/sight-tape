@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sight Mark Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <header>
+      <h1>Sight Mark Calculator</h1>
+    </header>
+
+    <section class="card" id="marks-section">
+      <h2>Sight Marks</h2>
+      <p class="hint">Enter your sight setting for each distance you've shot.</p>
+      <div class="table-wrap">
+        <table id="marks-table">
+          <thead>
+            <tr>
+              <th>Distance</th>
+              <th>Unit</th>
+              <th>Sight Mark</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="marks-tbody"></tbody>
+        </table>
+      </div>
+      <div class="marks-footer">
+        <button id="add-mark-btn" class="btn btn-secondary">+ Add Mark</button>
+<div class="io-btns">
+          <button id="io-toggle-btn" class="btn btn-ghost">Import / Export</button>
+        </div>
+      </div>
+      <div id="io-panel" class="io-panel" style="display:none">
+        <p class="hint">Format: <code>distance,unit,value</code> — one mark per line.</p>
+        <textarea id="io-textarea" class="io-textarea" spellcheck="false"></textarea>
+        <div class="io-actions">
+          <button id="io-copy-btn" class="btn btn-secondary">Copy</button>
+          <button id="io-load-btn" class="btn btn-secondary">Load</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="card" id="preview-section">
+      <h2>Sight Tape</h2>
+      <div id="tape-preview"></div>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

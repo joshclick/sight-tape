@@ -1,0 +1,319 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #0b1120;
+  --surface: #131f35;
+  --surface2: #1a2844;
+  --border: #2a3f60;
+  --border-light: #1e3050;
+  --text: #e2e8f0;
+  --text-muted: #7a95b8;
+  --text-dim: #4a6080;
+  --accent: #3b82f6;
+  --accent-hover: #2563eb;
+  --accent-dim: rgba(59,130,246,0.15);
+  --danger: #ef4444;
+  --radius: 10px;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+#app {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 5rem;
+}
+
+/* ── Header ── */
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+header h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+/* ── Cards ── */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.card h2 {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  margin-bottom: 0.85rem;
+}
+
+.hint {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  margin-bottom: 1rem;
+}
+
+.hint code {
+  background: var(--surface2);
+  padding: 0.1em 0.35em;
+  border-radius: 3px;
+  font-size: 0.85em;
+  color: var(--text-muted);
+}
+
+/* ── Table ── */
+.table-wrap {
+  overflow-x: auto;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+  border: 1px solid var(--border-light);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead th {
+  background: var(--surface2);
+  text-align: left;
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-muted);
+  padding: 0.55rem 0.85rem;
+  border-bottom: 1px solid var(--border);
+}
+
+tbody td {
+  padding: 0.35rem 0.5rem;
+  border-bottom: 1px solid var(--border-light);
+  vertical-align: middle;
+}
+
+tbody tr:last-child td { border-bottom: none; }
+tbody tr:hover td { background: rgba(255,255,255,0.02); }
+
+/* ── Inputs ── */
+input[type="number"],
+input[type="text"],
+select {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 6px;
+  padding: 0.35rem 0.55rem;
+  font-size: 0.85rem;
+  width: 100%;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  font-family: inherit;
+}
+
+input:focus, select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-dim);
+}
+
+.td-dist input { width: 80px; }
+.td-unit select { width: 65px; }
+.td-val  input { width: 90px; }
+
+/* ── Buttons ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.45rem 0.9rem;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  font-size: 0.82rem;
+  font-weight: 500;
+  transition: all 0.15s;
+  font-family: inherit;
+  white-space: nowrap;
+}
+
+.btn-secondary {
+  background: var(--surface2);
+  color: var(--text);
+  border-color: var(--border);
+}
+.btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--text-muted);
+  border-color: var(--border);
+  font-size: 0.75rem;
+  padding: 0.3rem 0.65rem;
+}
+.btn-ghost:hover { border-color: var(--text-muted); color: var(--text); }
+
+.btn-del {
+  background: transparent;
+  border: none;
+  color: var(--text-dim);
+  font-size: 1.2rem;
+  line-height: 1;
+  padding: 0.15rem 0.45rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.btn-del:hover { background: rgba(239,68,68,0.12); color: var(--danger); }
+
+/* ── Marks footer ── */
+.marks-footer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.io-btns {
+  display: flex;
+  gap: 0.45rem;
+  margin-left: auto;
+}
+
+/* ── Import / Export panel ── */
+.io-panel {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-light);
+}
+
+.io-textarea {
+  width: 100%;
+  height: 130px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 6px;
+  padding: 0.6rem 0.75rem;
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  font-size: 0.82rem;
+  line-height: 1.6;
+  resize: vertical;
+  outline: none;
+  margin-bottom: 0.75rem;
+}
+
+.io-textarea:focus { border-color: var(--accent); }
+
+.io-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* ── Reference table ── */
+#preview-section h2 { margin-bottom: 0.5rem; }
+
+.no-marks-msg {
+  color: var(--text-dim);
+  font-size: 0.88rem;
+  padding: 2rem;
+  text-align: center;
+}
+
+.ref-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.ref-table thead th {
+  background: var(--surface2);
+  text-align: left;
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-muted);
+  padding: 0.6rem 1.25rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.ref-table thead th:last-child { text-align: right; }
+
+.td-out-dist {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text);
+  padding: 0.85rem 1.25rem;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.td-out-val {
+  font-size: 1.25rem;
+  color: var(--text-muted);
+  padding: 0.85rem 1.25rem;
+  text-align: right;
+  border-bottom: 1px solid var(--border-light);
+  font-variant-numeric: tabular-nums;
+}
+
+.ref-table tbody tr:last-child td { border-bottom: none; }
+.ref-table tbody tr:hover td { background: rgba(255,255,255,0.03); }
+
+/* Calculated rows */
+.tr-calc .td-out-dist,
+.tr-calc .td-out-val {
+  font-size: 1rem;
+  color: var(--text-dim);
+  font-weight: 400;
+  padding-top: 0.55rem;
+  padding-bottom: 0.55rem;
+}
+
+/* ── Chart ── */
+.chart-wrap {
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-light);
+}
+
+.chart-legend {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  flex-wrap: wrap;
+}
+
+.chart-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.td-calc-note {
+  font-size: 0.72rem;
+  color: var(--text-dim);
+  padding: 0.6rem 1.25rem;
+  border-top: 1px solid var(--border-light);
+  text-align: right;
+  font-style: italic;
+}
