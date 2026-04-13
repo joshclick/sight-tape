@@ -117,7 +117,7 @@ function buildReferenceTable() {
 
   if (predict) {
     STANDARD_DISTANCES.forEach(std => {
-      const covered = enteredRows.some(r => Math.abs(r.dMeters - std.d) < 0.1);
+      const covered = enteredRows.some(r => Math.abs(r.dMeters - std.d) < 0.001);
       if (!covered) {
         const v = predict(std.d);
         if (isFinite(v)) rows.push({ label: std.label, value: v, calc: true, dMeters: std.d });
