@@ -63,14 +63,17 @@ function getValidMarks() {
 const YD_TO_M = 0.9144;
 
 const STANDARD_DISTANCES = [
-  { d: 18,           label: '18m'  },
-  { d: 20,           label: '20m'  },
-  { d: 25,           label: '25m'  },
-  { d: 30,           label: '30m'  },
-  { d: 40,           label: '40m'  },
-  { d: 50,           label: '50m'  },
-  { d: 60,           label: '60m'  },
-  { d: 70,           label: '70m'  },
+  { d: 18,            label: '18m'  },
+  { d: 20,            label: '20m'  },
+  { d: 25,            label: '25m'  },
+  { d: 30,            label: '30m'  },
+  { d: 40 * YD_TO_M,  label: '40yd' },
+  { d: 40,            label: '40m'  },
+  { d: 50 * YD_TO_M,  label: '50yd' },
+  { d: 50,            label: '50m'  },
+  { d: 60 * YD_TO_M,  label: '60yd' },
+  { d: 60,            label: '60m'  },
+  { d: 70,            label: '70m'  },
 ];
 
 function toMeters(distance, unit) {
