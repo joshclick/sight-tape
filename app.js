@@ -117,7 +117,7 @@ function buildReferenceTable() {
 
   if (predict) {
     STANDARD_DISTANCES.forEach(std => {
-      const covered = enteredRows.some(r => Math.abs(r.dMeters - std.d) < 0.5);
+      const covered = enteredRows.some(r => Math.abs(r.dMeters - std.d) < 0.1);
       if (!covered) {
         const v = predict(std.d);
         if (isFinite(v)) rows.push({ label: std.label, value: v, calc: true, dMeters: std.d });
@@ -195,7 +195,7 @@ function buildChart() {
 
   const estimated = [];
   STANDARD_DISTANCES.forEach(std => {
-    const covered = entered.some(e => Math.abs(e.d - std.d) < 0.5);
+    const covered = entered.some(e => Math.abs(e.d - std.d) < 0.1);
     if (!covered) {
       const v = predict(std.d);
       if (isFinite(v)) estimated.push({ d: std.d, v, label: std.label });
